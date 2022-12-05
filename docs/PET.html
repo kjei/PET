@@ -5,11 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>dev_guide API documentation</title>
-<meta name="description" content="For now `index.html` redirects to this module
-(lookup `&#34;dev_guide.py&#34;` or `&#34;dev_guide.md&#34;` in the source)
-making it the front page.
-Once there is a …" />
+<title>PET API documentation</title>
+<meta name="description" content="Python Ensemble Toolbox …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -24,152 +21,21 @@ Once there is a …" />
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>dev_guide</code></h1>
+<h1 class="title">Module <code>PET</code></h1>
 </header>
 <section id="section-intro">
-<p>For now <code>index.html</code> redirects to this module
-(lookup <code>"dev_guide.py"</code> or <code>"dev_guide.md"</code> in the source)
-making it the front page.
-Once there is a sensible root package to point to,
-(containing references to the others) we will change that.
-Similarly, manually making the following list will be unnecessary
-once all of the packages (folders) are put into a root folder,
-(as they should be).</p>
+<h1 id="python-ensemble-toolbox">Python Ensemble Toolbox</h1>
+<p>The Python Ensemble Toolboxs contains several packages that can be used indivudually, or in combination. In the following we give a link to the documentation for all the packages. The documentation is generated using pdoc and will be updated alongside the code. Note that everything is not perfect. Issues can be reported in the issue tracker.</p>
+<h1 id="packages">Packages</h1>
+<p>PET consist of the following packages:</p>
 <ul>
-<li><code>ip</code></li>
-<li><code>fwd_sim</code></li>
-<li><code><a title="input_output" href="input_output/index.html">input_output</a></code></li>
-<li><code>geostat</code></li>
-<li><code>optimization</code></li>
+<li><a href="./ensemble/index.html" target="_top">Ensemble</a> for setting up and managing the ensemble.</li>
+<li><a href="./pipt/index.html" target="_top">PIPT</a> for solving data-assimilation and the invese problem.</li>
+<li><a href="./popt/index.html" target="_top">POPT</a> for solving the optimization problem.</li>
+<li><a href="./input_output/index.html" target="_top">Input/Output</a> Managing this.</li>
+<li><a href="./misc/index.html" target="_top">Miscellaneous</a> methods used in both pipt and popt.</li>
+<li><a href="./simulator/index.html" target="_top">Simulator</a> class for wrapping numerical problems</li>
 </ul>
-<p>However, only a top-level lists will be generated.
-If we want a full (recursive) tree/index of modules,
-we have to wait for <a href="https://github.com/pdoc3/pdoc/issues/101">this</a>.
-Meanwhile, the following was generating using</p>
-<pre><code class="language-sh">tree | grep -v &quot;pyc&quot; | grep -v &quot;__init__.py&quot; | grep -v &quot;txt$&quot;
-
-├── debug
-│   └── traceme.py
-├── docs
-│   ├── dev_guide.md
-│   ├── dev_guide.py
-│   ├── index.html
-│   ├── manual_inv_prob_python.pdf
-│   ├── templates
-│   │   └── config.mako
-├── fwd_sim
-│   ├── deterministic_loops.py
-│   ├── deterministic.py
-│   ├── ensemble_loops.py
-│   ├── ensemble.py
-│   ├── optim_loops.py
-│   ├── optim.py
-├── geostat
-│   ├── decomp.py
-│   ├── gaussian_sim.py
-│   ├── get_variogram.py
-│   ├── gslib.py
-├── input_output
-│   ├── mare2dem.py
-│   ├── modem.py
-│   ├── pipt_init.py
-├── ip.py
-├── log_optim_loops.log
-├── misc_tools
-│   ├── analysis_tools.py
-│   ├── basic_tools.py
-│   ├── coordtrans.py
-│   ├── cov_regularization.py
-│   ├── genetic.py
-│   ├── gradient_field.py
-│   ├── green_tools.py
-│   ├── grid_select.py
-│   ├── heaviside_dirac.py
-│   ├── levelset_tools.py
-│   ├── LS_matchspace.py
-│   ├── matchspace.py
-│   ├── old_matchspace.py
-│   ├── optim_tools.py
-│   ├── seismic_tools.py
-│   └── wavelet_tools.py
-├── optimization
-│   ├── levelset_optim.py
-├── paramrep
-│   ├── levelset.py
-├── PIPT.egg-info
-│   ├── PKG-INFO
-├── plot
-│   ├── csem_plot.py
-│   ├── levelset_plot.py
-│   ├── upscale_field.py
-│   ├── upscale_plot.py
-│   └── upscale_stats.py
-├── post_processing
-│   ├── bayesian_averaging.py
-├── README.md
-├── rockphysics
-│   ├── ekofisk_pem.py
-│   ├── em.py
-│   ├── nornep.py
-│   └── standardrp.py
-├── setup.py
-├── simulator
-│   ├── csem.py
-│   ├── debug_simulator.py
-│   ├── flow_rock_feat.py
-│   ├── flow_rock.py
-│   ├── gravimetry.py
-│   ├── log_gp.py
-│   ├── log.py
-│   ├── mt.py
-│   ├── Ray_runners
-│   │   ├── simple_models.py
-│   │   └── subsurf_flow.py
-│   ├── seismic.py
-│   ├── shallowlogs.py
-│   ├── simple_models.py
-│   └── subsurf_flow.py
-├── system_tools
-│   ├── environ_var.py
-├── tests
-│   └── test_stuff.py
-└── update_schemes
-    ├── ensemble_optimization.py
-    ├── iter_ensemble.py
-    ├── ml_ensemble.py
-    └── seq_ensemble.py
-
-</code></pre>
-<h2 id="documentation-generation">Documentation generation</h2>
-<p>The documentation is generated using <a href="https://pdoc3.github.io/pdoc/doc/pdoc">pdoc3</a>,
-which grabs the docstrings of modules/classes/functions,
-and renders them into pretty html.
-The docstrings should be written using markdown syntax,
-<a href="https://pdoc3.github.io/pdoc/doc/pdoc/#supported-docstring-formats">with some extras (cross-referencing, math, etc)</a></p>
-<h3 id="run-pdoc-locally">Run pdoc locally</h3>
-<p>Unlike the typical case with <code>sphinx</code>,
-we do not use <code>readthedocs</code> for generation and hosting,
-but rather GitHub Actions and Pages.
-To preview you changes to the docs,
-do the following (manually including all of the folders/packages will become unnecessary
-once they've all been put into a root folder (which they should be)):</p>
-<pre><code class="language-sh">pdoc --force --html --template-dir docs/templates -o ./docs/ \
-    docs/dev_guide.py ip.py fwd_sim input_output geostat optimization
-</code></pre>
-<p>Open <code>docs/index.html</code> to preview the result.</p>
-<p>There is also a nice <code>--http</code> flag to get live reloading
-as you make changes. Use it for example as follows:</p>
-<pre><code class="language-sh">pdoc --template-dir docs/templates --http : ip.py
-</code></pre>
-<h2 id="tests">Tests</h2>
-<p>Run the tests by the command</p>
-<pre><code class="language-sh">pytest
-</code></pre>
-<p>It will discover all <a href="https://docs.pytest.org">appropriately named tests</a>
-in the source (see the <code>tests</code> dir).</p>
-<p>Use (for example) <code>pytest --doctest-modules docs/dev_guide.py</code> to
-<em>also</em> run any example code <strong>within</strong> docstrings.</p>
-<p>The CI also simply runs <code>pytest</code>.</p>
 </section>
 <section>
 </section>
@@ -184,11 +50,8 @@ in the source (see the <code>tests</code> dir).</p>
 <h1>Index</h1>
 <div class="toc">
 <ul>
-<li><a href="#documentation-generation">Documentation generation</a><ul>
-<li><a href="#run-pdoc-locally">Run pdoc locally</a></li>
-</ul>
-</li>
-<li><a href="#tests">Tests</a></li>
+<li><a href="#python-ensemble-toolbox">Python Ensemble Toolbox</a></li>
+<li><a href="#packages">Packages</a></li>
 </ul>
 </div>
 <ul id="index">
