@@ -45,7 +45,7 @@ calculation of sensitivity matrix (if needed) is performed. In addition, methods
 classes are/should be implemented here.</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
-<li>ensemble.ensemble.Ensemble</li>
+<li><a title="ensemble.ensemble.Ensemble" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble">Ensemble</a></li>
 </ul>
 <h3>Subclasses</h3>
 <ul class="hlist">
@@ -115,21 +115,19 @@ parameters and steps i-ii. Initialization of the simulator is done when initiali
 </code></pre>
 <p>ST 25/9-19: First implementation.</p></div>
 </dd>
-<dt id="popt.loop.ensemble.Ensemble.save"><code class="name flex">
-<span>def <span class="ident">save</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>We use pickle to dump all the information we have in 'self'. Can be used, e.g., if some error has occurred.</p>
-<p>ST 28/2-17</p></div>
-</dd>
-<dt id="popt.loop.ensemble.Ensemble.load"><code class="name flex">
-<span>def <span class="ident">load</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Load a pickled file and save all info. in self.</p>
-<p>ST 28/2-17</p></div>
-</dd>
 </dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="ensemble.ensemble.Ensemble" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble">Ensemble</a></b></code>:
+<ul class="hlist">
+<li><code><a title="ensemble.ensemble.Ensemble.calc_prediction" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.calc_prediction">calc_prediction</a></code></li>
+<li><code><a title="ensemble.ensemble.Ensemble.gen_init_ensemble" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.gen_init_ensemble">gen_init_ensemble</a></code></li>
+<li><code><a title="ensemble.ensemble.Ensemble.get_list_assim_steps" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.get_list_assim_steps">get_list_assim_steps</a></code></li>
+<li><code><a title="ensemble.ensemble.Ensemble.load" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.load">load</a></code></li>
+<li><code><a title="ensemble.ensemble.Ensemble.save" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.save">save</a></code></li>
+</ul>
+</li>
+</ul>
 </dd>
 </dl>
 </section>
@@ -154,8 +152,6 @@ parameters and steps i-ii. Initialization of the simulator is done when initiali
 <li><code><a title="popt.loop.ensemble.Ensemble.get_obj_func" href="#popt.loop.ensemble.Ensemble.get_obj_func">get_obj_func</a></code></li>
 <li><code><a title="popt.loop.ensemble.Ensemble.calc_ensemble_sensitivity" href="#popt.loop.ensemble.Ensemble.calc_ensemble_sensitivity">calc_ensemble_sensitivity</a></code></li>
 <li><code><a title="popt.loop.ensemble.Ensemble.run_ensemble" href="#popt.loop.ensemble.Ensemble.run_ensemble">run_ensemble</a></code></li>
-<li><code><a title="popt.loop.ensemble.Ensemble.save" href="#popt.loop.ensemble.Ensemble.save">save</a></code></li>
-<li><code><a title="popt.loop.ensemble.Ensemble.load" href="#popt.loop.ensemble.Ensemble.load">load</a></code></li>
 </ul>
 </li>
 </ul>
