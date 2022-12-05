@@ -1,0 +1,265 @@
+<!-- Search file for "CHANGE" for my own changes -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>simulator.simple_models API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>simulator.simple_models</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="simulator.simple_models.lin_1d"><code class="flex name class">
+<span>class <span class="ident">lin_1d</span></span>
+<span>(</span><span>input_dict=None, m=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>linear 1x150 model (or whatever), just make observations of the state at given positions.</p>
+<p>Two inputs here. A dictionary of keys, or parameter directly.</p>
+<p>Optional input 1:
+- input_dict:
+Dictionary containig all information the run the simulator (may come from,
+e.g., an init file)</p>
+<p>Optional input 2:
+- m:
+Parameter to make predicted data</p>
+<p>ST 7/9-15</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="simulator.simple_models.lin_1d.setup_fwd_run"><code class="name flex">
+<span>def <span class="ident">setup_fwd_run</span></span>(<span>self, assimIndex=None, trueOrder=None, pred_data=None, redundant_sim=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="simulator.simple_models.lin_1d.run_fwd_sim"><code class="name flex">
+<span>def <span class="ident">run_fwd_sim</span></span>(<span>self, state, member_i, del_folder=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="simulator.simple_models.nonlin_onedimmodel"><code class="flex name class">
+<span>class <span class="ident">nonlin_onedimmodel</span></span>
+<span>(</span><span>input_dict=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class of simple 1D forward model for testing purposes.</p>
+<p>Two inputs here. A dictionary of keys, or parameter directly.</p>
+<p>Optional input 1:
+- input_dict:
+Dictionary containig all information the run the simulator (may come from,
+e.g., an init file)</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="simulator.simple_models.nonlin_onedimmodel.setup_fwd_run"><code class="name flex">
+<span>def <span class="ident">setup_fwd_run</span></span>(<span>self, assimIndex=None, trueOrder=None, pred_data=None, redundant_sim=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="simulator.simple_models.nonlin_onedimmodel.run_fwd_sim"><code class="name flex">
+<span>def <span class="ident">run_fwd_sim</span></span>(<span>self, state, member_i, del_folder=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="simulator.simple_models.sevenmountains"><code class="flex name class">
+<span>class <span class="ident">sevenmountains</span></span>
+<span>(</span><span>input_dict=None, state=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The objective function is the elevations of the seven mountains around bergen, to test optimization algorithm</p>
+<p>Two inputs here. A dictionary of keys, or parameter directly.</p>
+<p>Optional input 1:
+- input_dict:
+Dictionary containing all information the run the simulator (may come from,
+e.g., an init file)</p>
+<p>Optional input 2:
+- state:
+Parameter to make predicted data</p>
+<p>ST 9/5-18</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="simulator.simple_models.sevenmountains.get_sim_results"><code class="name flex">
+<span>def <span class="ident">get_sim_results</span></span>(<span>which_resp, ext_data_info=None, member=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get forward simulation results. Simply load the numpy array&hellip;</p>
+<h2 id="input">Input</h2>
+<ul>
+<li>which_resp:
+Which of the responses is to be outputted (just one data type in this case)</li>
+</ul>
+<p>Optional input:
+- member:
+Ensemble member that is finished</p>
+<p>Input NOT used
+- ext_data_info.
+At what place is the assimilation step</p>
+<h2 id="output">Output</h2>
+<ul>
+<li>y:
+Array containing the predicted data (response).</li>
+</ul>
+<p>ST 3/6-16</p></div>
+</dd>
+<dt id="simulator.simple_models.sevenmountains.get_obj_func"><code class="name flex">
+<span>def <span class="ident">get_obj_func</span></span>(<span>obj_func_name, data_info=None, member=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="simulator.simple_models.sevenmountains.check_sim_end"><code class="name flex">
+<span>def <span class="ident">check_sim_end</span></span>(<span>current_run)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check if a simulation that has run in the background is finished. For ensemble-based methods,
+there can possibly be several folders with simulations, and each folder must be checked for finished runs. To
+check if simulation is done we search for .resp file which is the output in a successful
+run.</p>
+<h2 id="input">Input</h2>
+<ul>
+<li>current_run:
+List of ensemble members currently running simulation</li>
+</ul>
+<h2 id="output">Output</h2>
+<ul>
+<li>member:
+Ensemble member that is finished</li>
+</ul>
+<p>ST 9/5-18</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="simulator.simple_models.sevenmountains.setup_fwd_run"><code class="name flex">
+<span>def <span class="ident">setup_fwd_run</span></span>(<span>self, state, assim_ind=None, true_ind=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set input parameters from an fwd_sim in the simulation to get predicted data. Parameters can be an ensemble or
+a single array.</p>
+<h2 id="input">Input</h2>
+<ul>
+<li>state:
+Dictionary of input parameter. Either single 'state' or an ensemble of 'state'</li>
+</ul>
+<p>NOT used input:
+- true_ind:
+The list of the observed data assimilation indices
+- assim_ind:
+List with info. on assimilation order for ensemble-based methods</p>
+<p>ST 3/6-16</p></div>
+</dd>
+<dt id="simulator.simple_models.sevenmountains.run_fwd_sim"><code class="name flex">
+<span>def <span class="ident">run_fwd_sim</span></span>(<span>self, en_member=None, folder='/home/AD.NORCERESEARCH.NO/krfo/PET/PET', wait_for_proc=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set up and run a forward simulation in an fwd_sim. The parameters for the forward simulation is set in
+setup_fwd_run. All the steps to set up and run a forward simulation is done in this object.</p>
+<p>Optional input:
+- en_member:
+Index of ensemble member to be run
+- folder:
+Folder where forward simulation is run</p>
+<p>ST 3/6-16</p></div>
+</dd>
+<dt id="simulator.simple_models.sevenmountains.call_sim"><code class="name flex">
+<span>def <span class="ident">call_sim</span></span>(<span>self, path=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Run the simple 1D forward model</p>
+<p>Optional input:
+- path:
+Alternative folder where the MARE2DEM input files are located</p>
+<p>Input NOT used:
+- wait_for_proc:
+Logical variable to wait for simulation to be finished</p>
+<h2 id="output">Output</h2>
+<ul>
+<li>d:
+Predicted data</li>
+</ul>
+<p>ST 3/6-16</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="simulator" href="index.html">simulator</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="simulator.simple_models.lin_1d" href="#simulator.simple_models.lin_1d">lin_1d</a></code></h4>
+<ul class="">
+<li><code><a title="simulator.simple_models.lin_1d.setup_fwd_run" href="#simulator.simple_models.lin_1d.setup_fwd_run">setup_fwd_run</a></code></li>
+<li><code><a title="simulator.simple_models.lin_1d.run_fwd_sim" href="#simulator.simple_models.lin_1d.run_fwd_sim">run_fwd_sim</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="simulator.simple_models.nonlin_onedimmodel" href="#simulator.simple_models.nonlin_onedimmodel">nonlin_onedimmodel</a></code></h4>
+<ul class="">
+<li><code><a title="simulator.simple_models.nonlin_onedimmodel.setup_fwd_run" href="#simulator.simple_models.nonlin_onedimmodel.setup_fwd_run">setup_fwd_run</a></code></li>
+<li><code><a title="simulator.simple_models.nonlin_onedimmodel.run_fwd_sim" href="#simulator.simple_models.nonlin_onedimmodel.run_fwd_sim">run_fwd_sim</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="simulator.simple_models.sevenmountains" href="#simulator.simple_models.sevenmountains">sevenmountains</a></code></h4>
+<ul class="two-column">
+<li><code><a title="simulator.simple_models.sevenmountains.get_sim_results" href="#simulator.simple_models.sevenmountains.get_sim_results">get_sim_results</a></code></li>
+<li><code><a title="simulator.simple_models.sevenmountains.get_obj_func" href="#simulator.simple_models.sevenmountains.get_obj_func">get_obj_func</a></code></li>
+<li><code><a title="simulator.simple_models.sevenmountains.check_sim_end" href="#simulator.simple_models.sevenmountains.check_sim_end">check_sim_end</a></code></li>
+<li><code><a title="simulator.simple_models.sevenmountains.setup_fwd_run" href="#simulator.simple_models.sevenmountains.setup_fwd_run">setup_fwd_run</a></code></li>
+<li><code><a title="simulator.simple_models.sevenmountains.run_fwd_sim" href="#simulator.simple_models.sevenmountains.run_fwd_sim">run_fwd_sim</a></code></li>
+<li><code><a title="simulator.simple_models.sevenmountains.call_sim" href="#simulator.simple_models.sevenmountains.call_sim">call_sim</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

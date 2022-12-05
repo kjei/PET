@@ -1,0 +1,336 @@
+<!-- Search file for "CHANGE" for my own changes -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>pipt.update_schemes.esmda API documentation</title>
+<meta name="description" content="ES-MDA type schemes" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pipt.update_schemes.esmda</code></h1>
+</header>
+<section id="section-intro">
+<p>ES-MDA type schemes</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="pipt.update_schemes.esmda.esmdaMixIn"><code class="flex name class">
+<span>class <span class="ident">esmdaMixIn</span></span>
+<span>(</span><span>keys_da, keys_fwd, sim)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This is the implementation of the ES-MDA algorithm given in [1]. This algorithm have been implemented mostly to
+illustrate how a algorithm using the Mda loop can be implemented. </p>
+<p>The class is initialized by passing the PIPT init. file upwards in the hierarchy to be read and parsed in
+<code>pipt.input_output.pipt_init.ReadInitFile</code>.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>PIPT init. file containing info. to run the inversion algorithm</dd>
+</dl>
+<h2 id="references">References</h2>
+<p>[1] A. Emerick &amp; A. Reynods, Computers &amp; Geosciences, 55, p. 3-15, 2013</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="pipt.loop.ensemble.Ensemble" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble">Ensemble</a></li>
+<li>ensemble.ensemble.Ensemble</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pipt.update_schemes.esmda.esmda_approx" href="#pipt.update_schemes.esmda.esmda_approx">esmda_approx</a></li>
+<li><a title="pipt.update_schemes.esmda.esmda_full" href="#pipt.update_schemes.esmda.esmda_full">esmda_full</a></li>
+<li><a title="pipt.update_schemes.esmda.esmda_subspace" href="#pipt.update_schemes.esmda.esmda_subspace">esmda_subspace</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pipt.update_schemes.esmda.esmdaMixIn.calc_analysis"><code class="name flex">
+<span>def <span class="ident">calc_analysis</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Analysis step of ES-MDA. The analysis algorithm is similar to EnKF analysis, only difference is that the data
+covariance matrix is inflated with an inflation parameter alpha. The update is done as an iterative smoother
+where all data is assimilated at once.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>assim_step</code></strong> :&ensp;<code>int</code></dt>
+<dd>Current assimilation step</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>ES-MDA is an iterative ensemble smoother with a predefined number of iterations, where the updates is done with
+the EnKF update equations but where the data covariance matrix have been inflated:</p>
+<p><span><span class="MathJax_Preview">
+d_{obs} = d_{true} + \sqrt{\alpha}C_d^{1/2}Z \\
+m = m_{prior} + C_{md}(C_g + \alpha C_d)^{-1}(g(m) - d_{obs})
+</span><script type="math/tex; mode=display">
+d_{obs} = d_{true} + \sqrt{\alpha}C_d^{1/2}Z \\
+m = m_{prior} + C_{md}(C_g + \alpha C_d)^{-1}(g(m) - d_{obs})
+</script></span></p>
+<p>where <span><span class="MathJax_Preview">d_{true}</span><script type="math/tex">d_{true}</script></span> is the true observed data, <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> is the inflation factor, <span><span class="MathJax_Preview">C_d</span><script type="math/tex">C_d</script></span> is the data covariance
+matrix, <span><span class="MathJax_Preview">Z</span><script type="math/tex">Z</script></span> is a standard normal random variable, <span><span class="MathJax_Preview">C_{md}</span><script type="math/tex">C_{md}</script></span> and <span><span class="MathJax_Preview">C_{g}</span><script type="math/tex">C_{g}</script></span> are sample covariance matrices,
+<span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> is the model parameter, and <span><span class="MathJax_Preview">g(m)</span><script type="math/tex">g(m)</script></span> is the predicted data. Note that <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> can have a different
+value in each assimilation step and must fulfill:</p>
+<p><span><span class="MathJax_Preview">
+\sum_{i=1}^{N_a} \frac{1}{\alpha} = 1
+</span><script type="math/tex; mode=display">
+\sum_{i=1}^{N_a} \frac{1}{\alpha} = 1
+</script></span></p>
+<p>where <span><span class="MathJax_Preview">N_a</span><script type="math/tex">N_a</script></span> being the total number of assimilation steps.</p></div>
+</dd>
+<dt id="pipt.update_schemes.esmda.esmdaMixIn.check_convergence"><code class="name flex">
+<span>def <span class="ident">check_convergence</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check if LM-EnRML have converged based on evaluation of change sizes of objective function, state and damping
+parameter.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>conv</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Logic variable telling if algorithm has converged</dd>
+<dt><strong><code>why_stop</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dict. with keys corresponding to conv. criteria, with logical variable telling which of them that has been
+met</dd>
+</dl></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="pipt.loop.ensemble.Ensemble" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble">Ensemble</a></b></code>:
+<ul class="hlist">
+<li><code><a title="pipt.loop.ensemble.Ensemble.check_assimindex_sequential" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_sequential">check_assimindex_sequential</a></code></li>
+<li><code><a title="pipt.loop.ensemble.Ensemble.check_assimindex_simultaneous" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_simultaneous">check_assimindex_simultaneous</a></code></li>
+<li><code><a title="pipt.loop.ensemble.Ensemble.save_temp_state_assim" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_assim">save_temp_state_assim</a></code></li>
+<li><code><a title="pipt.loop.ensemble.Ensemble.save_temp_state_iter" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_iter">save_temp_state_iter</a></code></li>
+<li><code><a title="pipt.loop.ensemble.Ensemble.save_temp_state_mda" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_mda">save_temp_state_mda</a></code></li>
+<li><code><a title="pipt.loop.ensemble.Ensemble.save_temp_state_ml" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_ml">save_temp_state_ml</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="pipt.update_schemes.esmda.esmda_approx"><code class="flex name class">
+<span>class <span class="ident">esmda_approx</span></span>
+<span>(</span><span>keys_da, keys_fwd, sim)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This is the implementation of the ES-MDA algorithm given in [1]. This algorithm have been implemented mostly to
+illustrate how a algorithm using the Mda loop can be implemented. </p>
+<p>The class is initialized by passing the PIPT init. file upwards in the hierarchy to be read and parsed in
+<code>pipt.input_output.pipt_init.ReadInitFile</code>.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>PIPT init. file containing info. to run the inversion algorithm</dd>
+</dl>
+<h2 id="references">References</h2>
+<p>[1] A. Emerick &amp; A. Reynods, Computers &amp; Geosciences, 55, p. 3-15, 2013</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="pipt.update_schemes.esmda.esmdaMixIn" href="#pipt.update_schemes.esmda.esmdaMixIn">esmdaMixIn</a></li>
+<li><a title="pipt.loop.ensemble.Ensemble" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble">Ensemble</a></li>
+<li>ensemble.ensemble.Ensemble</li>
+<li><a title="pipt.update_schemes.update_methods.approx_update" href="update_methods.html#pipt.update_schemes.update_methods.approx_update">approx_update</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pipt.update_schemes.esmda.esmda_geo" href="#pipt.update_schemes.esmda.esmda_geo">esmda_geo</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="pipt.update_schemes.esmda.esmdaMixIn" href="#pipt.update_schemes.esmda.esmdaMixIn">esmdaMixIn</a></b></code>:
+<ul class="hlist">
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.calc_analysis" href="#pipt.update_schemes.esmda.esmdaMixIn.calc_analysis">calc_analysis</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.check_assimindex_sequential" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_sequential">check_assimindex_sequential</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.check_assimindex_simultaneous" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_simultaneous">check_assimindex_simultaneous</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.check_convergence" href="#pipt.update_schemes.esmda.esmdaMixIn.check_convergence">check_convergence</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_assim" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_assim">save_temp_state_assim</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_iter" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_iter">save_temp_state_iter</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_mda" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_mda">save_temp_state_mda</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_ml" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_ml">save_temp_state_ml</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="pipt.update_schemes.esmda.esmda_full"><code class="flex name class">
+<span>class <span class="ident">esmda_full</span></span>
+<span>(</span><span>keys_da, keys_fwd, sim)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This is the implementation of the ES-MDA algorithm given in [1]. This algorithm have been implemented mostly to
+illustrate how a algorithm using the Mda loop can be implemented. </p>
+<p>The class is initialized by passing the PIPT init. file upwards in the hierarchy to be read and parsed in
+<code>pipt.input_output.pipt_init.ReadInitFile</code>.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>PIPT init. file containing info. to run the inversion algorithm</dd>
+</dl>
+<h2 id="references">References</h2>
+<p>[1] A. Emerick &amp; A. Reynods, Computers &amp; Geosciences, 55, p. 3-15, 2013</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="pipt.update_schemes.esmda.esmdaMixIn" href="#pipt.update_schemes.esmda.esmdaMixIn">esmdaMixIn</a></li>
+<li><a title="pipt.loop.ensemble.Ensemble" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble">Ensemble</a></li>
+<li>ensemble.ensemble.Ensemble</li>
+<li><a title="pipt.update_schemes.update_methods.full_update" href="update_methods.html#pipt.update_schemes.update_methods.full_update">full_update</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="pipt.update_schemes.esmda.esmdaMixIn" href="#pipt.update_schemes.esmda.esmdaMixIn">esmdaMixIn</a></b></code>:
+<ul class="hlist">
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.calc_analysis" href="#pipt.update_schemes.esmda.esmdaMixIn.calc_analysis">calc_analysis</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.check_assimindex_sequential" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_sequential">check_assimindex_sequential</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.check_assimindex_simultaneous" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_simultaneous">check_assimindex_simultaneous</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.check_convergence" href="#pipt.update_schemes.esmda.esmdaMixIn.check_convergence">check_convergence</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_assim" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_assim">save_temp_state_assim</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_iter" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_iter">save_temp_state_iter</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_mda" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_mda">save_temp_state_mda</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_ml" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_ml">save_temp_state_ml</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="pipt.update_schemes.esmda.esmda_subspace"><code class="flex name class">
+<span>class <span class="ident">esmda_subspace</span></span>
+<span>(</span><span>keys_da, keys_fwd, sim)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This is the implementation of the ES-MDA algorithm given in [1]. This algorithm have been implemented mostly to
+illustrate how a algorithm using the Mda loop can be implemented. </p>
+<p>The class is initialized by passing the PIPT init. file upwards in the hierarchy to be read and parsed in
+<code>pipt.input_output.pipt_init.ReadInitFile</code>.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>PIPT init. file containing info. to run the inversion algorithm</dd>
+</dl>
+<h2 id="references">References</h2>
+<p>[1] A. Emerick &amp; A. Reynods, Computers &amp; Geosciences, 55, p. 3-15, 2013</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="pipt.update_schemes.esmda.esmdaMixIn" href="#pipt.update_schemes.esmda.esmdaMixIn">esmdaMixIn</a></li>
+<li><a title="pipt.loop.ensemble.Ensemble" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble">Ensemble</a></li>
+<li>ensemble.ensemble.Ensemble</li>
+<li><a title="pipt.update_schemes.update_methods.subspace_update" href="update_methods.html#pipt.update_schemes.update_methods.subspace_update">subspace_update</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="pipt.update_schemes.esmda.esmdaMixIn" href="#pipt.update_schemes.esmda.esmdaMixIn">esmdaMixIn</a></b></code>:
+<ul class="hlist">
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.calc_analysis" href="#pipt.update_schemes.esmda.esmdaMixIn.calc_analysis">calc_analysis</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.check_assimindex_sequential" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_sequential">check_assimindex_sequential</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.check_assimindex_simultaneous" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_simultaneous">check_assimindex_simultaneous</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.check_convergence" href="#pipt.update_schemes.esmda.esmdaMixIn.check_convergence">check_convergence</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_assim" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_assim">save_temp_state_assim</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_iter" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_iter">save_temp_state_iter</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_mda" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_mda">save_temp_state_mda</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.save_temp_state_ml" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_ml">save_temp_state_ml</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="pipt.update_schemes.esmda.esmda_geo"><code class="flex name class">
+<span>class <span class="ident">esmda_geo</span></span>
+<span>(</span><span>keys_da)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This is the implementation of the ES-MDA-GEO algorithm from [1]. The main analysis step in this algorithm is the
+same as the standard ES-MDA algorithm (implemented in the <code>es_mda</code> class). The difference between this and the
+standard algorithm is the calculation of the inflation factor.</p>
+<p>The class is initialized by passing the PIPT init. file upwards in the hierarchy to be read and parsed in
+<code>pipt.input_output.pipt_init.ReadInitFile</code>.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>PIPT init. file containing info. to run the inversion algorithm</dd>
+</dl>
+<h2 id="references">References</h2>
+<p>[1] J. Rafiee &amp; A. Reynolds, Inverse Problems 33 (11), 2017</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="pipt.update_schemes.esmda.esmda_approx" href="#pipt.update_schemes.esmda.esmda_approx">esmda_approx</a></li>
+<li><a title="pipt.update_schemes.esmda.esmdaMixIn" href="#pipt.update_schemes.esmda.esmdaMixIn">esmdaMixIn</a></li>
+<li><a title="pipt.loop.ensemble.Ensemble" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble">Ensemble</a></li>
+<li>ensemble.ensemble.Ensemble</li>
+<li><a title="pipt.update_schemes.update_methods.approx_update" href="update_methods.html#pipt.update_schemes.update_methods.approx_update">approx_update</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="pipt.update_schemes.esmda.esmda_approx" href="#pipt.update_schemes.esmda.esmda_approx">esmda_approx</a></b></code>:
+<ul class="hlist">
+<li><code><a title="pipt.update_schemes.esmda.esmda_approx.calc_analysis" href="#pipt.update_schemes.esmda.esmdaMixIn.calc_analysis">calc_analysis</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmda_approx.check_assimindex_sequential" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_sequential">check_assimindex_sequential</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmda_approx.check_assimindex_simultaneous" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_simultaneous">check_assimindex_simultaneous</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmda_approx.check_convergence" href="#pipt.update_schemes.esmda.esmdaMixIn.check_convergence">check_convergence</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmda_approx.save_temp_state_assim" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_assim">save_temp_state_assim</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmda_approx.save_temp_state_iter" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_iter">save_temp_state_iter</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmda_approx.save_temp_state_mda" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_mda">save_temp_state_mda</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmda_approx.save_temp_state_ml" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_ml">save_temp_state_ml</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="pipt.update_schemes" href="index.html">pipt.update_schemes</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="pipt.update_schemes.esmda.esmdaMixIn" href="#pipt.update_schemes.esmda.esmdaMixIn">esmdaMixIn</a></code></h4>
+<ul class="">
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.calc_analysis" href="#pipt.update_schemes.esmda.esmdaMixIn.calc_analysis">calc_analysis</a></code></li>
+<li><code><a title="pipt.update_schemes.esmda.esmdaMixIn.check_convergence" href="#pipt.update_schemes.esmda.esmdaMixIn.check_convergence">check_convergence</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pipt.update_schemes.esmda.esmda_approx" href="#pipt.update_schemes.esmda.esmda_approx">esmda_approx</a></code></h4>
+</li>
+<li>
+<h4><code><a title="pipt.update_schemes.esmda.esmda_full" href="#pipt.update_schemes.esmda.esmda_full">esmda_full</a></code></h4>
+</li>
+<li>
+<h4><code><a title="pipt.update_schemes.esmda.esmda_subspace" href="#pipt.update_schemes.esmda.esmda_subspace">esmda_subspace</a></code></h4>
+</li>
+<li>
+<h4><code><a title="pipt.update_schemes.esmda.esmda_geo" href="#pipt.update_schemes.esmda.esmda_geo">esmda_geo</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

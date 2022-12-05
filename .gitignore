@@ -141,7 +141,7 @@ cython_debug/
 .idea/
 
 #documentation
-*.html
+#*.html
 
 # mergetoolfiles
 *.orig
