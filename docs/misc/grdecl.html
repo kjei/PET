@@ -5,8 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>input_output.read_config API documentation</title>
-<meta name="description" content="" />
+<title>misc.grdecl API documentation</title>
+<meta name="description" content="Read Schlumberger Eclipse grid input files …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -21,9 +21,13 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>input_output.read_config</code></h1>
+<h1 class="title">Module <code>misc.grdecl</code></h1>
 </header>
 <section id="section-intro">
+<p>Read Schlumberger Eclipse grid input files.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import pyresito.io.grdecl as grdecl
+&gt;&gt;&gt; grid = grdecl.read (&quot;FOO&quot;)
+</code></pre>
 </section>
 <section>
 </section>
@@ -32,125 +36,178 @@
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="input_output.read_config.convert_pipt_to_yaml"><code class="name flex">
-<span>def <span class="ident">convert_pipt_to_yaml</span></span>(<span>init_file)</span>
+<dt id="misc.grdecl.membuf"><code class="name flex">
+<span>def <span class="ident">membuf</span></span>(<span>mem, bgn, end)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="input_output.read_config.read_yaml"><code class="name flex">
-<span>def <span class="ident">read_yaml</span></span>(<span>init_file)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Read .yaml input file, parse and return dictionaries for PIPT/POPT.</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
-<dd>.yaml file</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>keys_da</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Parsed keywords from dataassim</dd>
-<dt><strong><code>keys_fwd</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Parsed keywords from fwdsim</dd>
-</dl></div>
-</dd>
-<dt id="input_output.read_config.convert_pipt_to_toml"><code class="name flex">
-<span>def <span class="ident">convert_pipt_to_toml</span></span>(<span>init_file)</span>
+<dt id="misc.grdecl.conv_atoi"><code class="name flex">
+<span>def <span class="ident">conv_atoi</span></span>(<span>buf)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
 </dd>
-<dt id="input_output.read_config.read_toml"><code class="name flex">
-<span>def <span class="ident">read_toml</span></span>(<span>init_file)</span>
+<dt id="misc.grdecl.conv_atof"><code class="name flex">
+<span>def <span class="ident">conv_atof</span></span>(<span>buf)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Read .toml configuration file, parse and output dictionaries for PIPT/POPT</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
-<dd>toml configuration file</dd>
-</dl></div>
+<div class="desc"></div>
 </dd>
-<dt id="input_output.read_config.read_txt"><code class="name flex">
-<span>def <span class="ident">read_txt</span></span>(<span>init_file)</span>
+<dt id="misc.grdecl.enc"><code class="name flex">
+<span>def <span class="ident">enc</span></span>(<span>text)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Read a PIPT input file (.pipt), parse and output dictionaries for data assimilation and simulator classes.</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
-<dd>PIPT init. file containing info. to run the inversion algorithm</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>keys_da</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Parsed keywords from DATAASSIM</dd>
-<dt><strong><code>keys_fwd</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Parsed keywords from FWDSSIM</dd>
-</dl></div>
+<div class="desc"></div>
 </dd>
-<dt id="input_output.read_config.read_clean_file"><code class="name flex">
-<span>def <span class="ident">read_clean_file</span></span>(<span>init_file)</span>
+<dt id="misc.grdecl.dec"><code class="name flex">
+<span>def <span class="ident">dec</span></span>(<span>buf)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Read PIPT init. file and lines that are not comments (marked with octothorpe)</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
-<dd>Name of file to remove all comments. WHOLE filename needed (with suffix!)</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>lines</code></strong> :&ensp;<code>list</code></dt>
-<dd>Lines from init. file converted to list entries</dd>
-</dl></div>
+<div class="desc"></div>
 </dd>
-<dt id="input_output.read_config.remove_empty_lines"><code class="name flex">
-<span>def <span class="ident">remove_empty_lines</span></span>(<span>lines)</span>
+<dt id="misc.grdecl.read"><code class="name flex">
+<span>def <span class="ident">read</span></span>(<span>filename)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Small method for finding empty lines in a read file.</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>lines</code></strong> :&ensp;<code>list</code></dt>
-<dd>List of lines from a file</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>lines_clean</code></strong> :&ensp;<code>list</code></dt>
-<dd>List of clean lines (without empty entries)</dd>
-</dl></div>
+<div class="desc"><p>Read an Eclipse input grid into a dictionary.</p></div>
 </dd>
-<dt id="input_output.read_config.parse_keywords"><code class="name flex">
-<span>def <span class="ident">parse_keywords</span></span>(<span>lines)</span>
+<dt id="misc.grdecl.write"><code class="name flex">
+<span>def <span class="ident">write</span></span>(<span>filename, grid, dialect='ecl', multi_file=True)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Here we parse the lines in the init. file to a Python dictionary. The keys of the dictionary is the keywords
-entered in the PIPT init. file, and the information entered in each keyword is stored in each key of the
-dictionary. To know how the keyword-information is organized in the keys of the dictionary, confront the
-manual located in the doc folder.</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>lines</code></strong> :&ensp;<code>list</code></dt>
-<dd>List of (clean) lines from the PIPT init. file.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>keys</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Dictionary with all info. from the init. file.</dd>
-</dl></div>
+<div class="desc"><p>Write a grid to corner-point text format, formatted in such a way
+that it can easily be read again.</p>
+<p>:param filename:
+Name of the filename containing a wrapper for all
+the properties. This will also serve as the stem for
+all individual property files.
+:type filename:
+str
+:param grid:
+Grid object containing values for all properties.
+:type grid:
+dict
+:param dialect:
+Name of the simulator that we are writing files for.
+Currently, this must be 'ecl'.
+:type dialect:
+str
+:param multi_file:
+Write properties in separate files, instead of putting
+everything in one large file.
+:type multi_file:
+bool</p></div>
 </dd>
-<dt id="input_output.read_config.check_mand_keywords_da_fwdsim"><code class="name flex">
-<span>def <span class="ident">check_mand_keywords_da_fwdsim</span></span>(<span>keys_da, keys_fwd)</span>
+<dt id="misc.grdecl.write_compressed"><code class="name flex">
+<span>def <span class="ident">write_compressed</span></span>(<span>fname, keyw, cube, *, fmt='12.6e')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Check for mandatory keywords in <code>DATAASSIM</code> and <code>FWDSIM</code> part, and output error if they are not present</p></div>
+<div class="desc"><p>Write a data field as a keyword that can be included into a grid file.</p>
+<p>:param fname:
+Path to the output file to write to
+:type
+fname:
+str
+:param keyw:
+Name of the keyword to put in the header; this should
+not be greater than eight characters
+:type
+keyw:
+str
+:param cube:
+Data cube to be written
+:type
+cube:
+:class:<code>numpy.array</code>
+:param fmt:
+Format of a single item, on the form used to specify
+formats in the build-in routines, but without percent
+or braces.
+:type fmt:
+str</p></div>
+</dd>
+<dt id="misc.grdecl.shape"><code class="name flex">
+<span>def <span class="ident">shape</span></span>(<span>grdecl)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get shape of field data cube.</p>
+<p>:param grdecl:
+Corner-point grid structure
+:type
+grdecl:
+dict
+:return:
+(num_k, num_j, num_i)
+:rtype:
+(int, int, int)</p></div>
+</dd>
+<dt id="misc.grdecl.read_prop"><code class="name flex">
+<span>def <span class="ident">read_prop</span></span>(<span>fname, dims, typ=numpy.float64, prop=None, *, mask=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Read a property from a text file into a dictionary. This is akin to
+Petrel's Import onto selection popup menu choice.</p>
+<p>:param fname:
+File name to load property from. Currently, this must be
+a file in the filesystem and cannot be a file-like object.
+:type
+fname:
+str
+:param dims:
+Dimensions of the data cube, in a format compatible with
+the return of the shape function, i.e. (nk, nj, ni)
+:type
+dims:
+(int, int, int)
+:param typ:
+Data type of the data to be loaded
+:type
+typ:
+:class:<code>numpy.dtype</code>
+:param prop:
+Dictionary where the keyword will be added. If this is
+None, then a new dictionary will be created.
+:type
+prop:
+dict
+:param mask:
+Existing mask for inactive elements; this will be
+combined with the mask inherit in the data, if specified.
+If you have loaded the grid, this should be the ACTNUM
+field
+:type
+mask:
+Optional[:class:<code>numpy.ndarray</code>]
+:return:
+Dictionary where the property being read is added as a key
+:rtype:
+dict</p></div>
+</dd>
+<dt id="misc.grdecl.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>*args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Read a data file to see if it parses OK.</p></div>
 </dd>
 </dl>
 </section>
 <section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="misc.grdecl.GrdEclError"><code class="flex name class">
+<span>class <span class="ident">GrdEclError</span></span>
+<span>(</span><span>path, pos, message)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Exception thrown if invalid syntax is encountered.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -161,20 +218,29 @@ manual located in the doc folder.</p>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="input_output" href="index.html">input_output</a></code></li>
+<li><code><a title="misc" href="index.html">misc</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="">
-<li><code><a title="input_output.read_config.convert_pipt_to_yaml" href="#input_output.read_config.convert_pipt_to_yaml">convert_pipt_to_yaml</a></code></li>
-<li><code><a title="input_output.read_config.read_yaml" href="#input_output.read_config.read_yaml">read_yaml</a></code></li>
-<li><code><a title="input_output.read_config.convert_pipt_to_toml" href="#input_output.read_config.convert_pipt_to_toml">convert_pipt_to_toml</a></code></li>
-<li><code><a title="input_output.read_config.read_toml" href="#input_output.read_config.read_toml">read_toml</a></code></li>
-<li><code><a title="input_output.read_config.read_txt" href="#input_output.read_config.read_txt">read_txt</a></code></li>
-<li><code><a title="input_output.read_config.read_clean_file" href="#input_output.read_config.read_clean_file">read_clean_file</a></code></li>
-<li><code><a title="input_output.read_config.remove_empty_lines" href="#input_output.read_config.remove_empty_lines">remove_empty_lines</a></code></li>
-<li><code><a title="input_output.read_config.parse_keywords" href="#input_output.read_config.parse_keywords">parse_keywords</a></code></li>
-<li><code><a title="input_output.read_config.check_mand_keywords_da_fwdsim" href="#input_output.read_config.check_mand_keywords_da_fwdsim">check_mand_keywords_da_fwdsim</a></code></li>
+<ul class="two-column">
+<li><code><a title="misc.grdecl.membuf" href="#misc.grdecl.membuf">membuf</a></code></li>
+<li><code><a title="misc.grdecl.conv_atoi" href="#misc.grdecl.conv_atoi">conv_atoi</a></code></li>
+<li><code><a title="misc.grdecl.conv_atof" href="#misc.grdecl.conv_atof">conv_atof</a></code></li>
+<li><code><a title="misc.grdecl.enc" href="#misc.grdecl.enc">enc</a></code></li>
+<li><code><a title="misc.grdecl.dec" href="#misc.grdecl.dec">dec</a></code></li>
+<li><code><a title="misc.grdecl.read" href="#misc.grdecl.read">read</a></code></li>
+<li><code><a title="misc.grdecl.write" href="#misc.grdecl.write">write</a></code></li>
+<li><code><a title="misc.grdecl.write_compressed" href="#misc.grdecl.write_compressed">write_compressed</a></code></li>
+<li><code><a title="misc.grdecl.shape" href="#misc.grdecl.shape">shape</a></code></li>
+<li><code><a title="misc.grdecl.read_prop" href="#misc.grdecl.read_prop">read_prop</a></code></li>
+<li><code><a title="misc.grdecl.main" href="#misc.grdecl.main">main</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="misc.grdecl.GrdEclError" href="#misc.grdecl.GrdEclError">GrdEclError</a></code></h4>
+</li>
 </ul>
 </li>
 </ul>

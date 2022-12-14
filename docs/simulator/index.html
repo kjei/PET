@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>simulator API documentation</title>
-<meta name="description" content="" />
+<meta name="description" content="Simulator package …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -24,6 +24,28 @@
 <h1 class="title">Package <code>simulator</code></h1>
 </header>
 <section id="section-intro">
+<h1 id="simulator-package">Simulator package</h1>
+<p>Here you can put the wrappers for simulator used with PET. </p>
+<p>You can build your wrapper (almost) any way you like, but you must follow the following rules:</p>
+<ol>
+<li>The wrapper must be a Class</li>
+<li>The Class must contain the following three methods:</li>
+</ol>
+<pre><code>__init__(self,input_dict):
+    # parse information from the input. 
+    # Needs to get datatype, reporttype and reportpoint
+</code></pre>
+<pre><code>Setup_fwd_run(self)
+   # do whatever initiallization you need.
+   # Useful to initiallize the self.pred_data variable.
+   # self.pred_data is a list of dictionaries. Where each list element represents
+   # a reportpoint and the dictionary should have the datatypes as keys. 
+   # Entries in the dictionary are numpy arrays.
+</code></pre>
+<pre><code>run_fwd_sim(self, state, member)
+  # run simulator. Called from the main function using p_map from p_tqdm package.
+  # Return pred_data if run is successfull, False if run failed.
+</code></pre>
 </section>
 <section>
 <h2 class="section-title" id="header-submodules">Sub-modules</h2>
@@ -70,7 +92,9 @@
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#simulator-package">Simulator package</a></li>
+</ul>
 </div>
 <ul id="index">
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>

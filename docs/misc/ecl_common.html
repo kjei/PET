@@ -5,8 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>pipt.geostat.gslib API documentation</title>
-<meta name="description" content="" />
+<title>misc.ecl_common API documentation</title>
+<meta name="description" content="Common definitions for all import filters …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -21,9 +21,12 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>pipt.geostat.gslib</code></h1>
+<h1 class="title">Module <code>misc.ecl_common</code></h1>
 </header>
 <section id="section-intro">
+<p>Common definitions for all import filters</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; from .ecl_common import Phase, Prop
+</code></pre>
 </section>
 <section>
 </section>
@@ -34,93 +37,57 @@
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="pipt.geostat.gslib.Sgsim"><code class="flex name class">
-<span>class <span class="ident">Sgsim</span></span>
-<span>(</span><span>x_size, y_size, z_size, data='foo.dat', var=1, mean=None, var_type='sph', outfile='sgsim.out', corr_range=1, corr_aniso=[1, 1], corr_angl=[0, 0, 0], limits=[-1e+21, 1e+21], number=1)</span>
+<dt id="misc.ecl_common.Phase"><code class="flex name class">
+<span>class <span class="ident">Phase</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>This script writes the input file for gslib's sequential Gaussian simulation package.</p>
-<h2 id="input">Input</h2>
-<ul>
-<li>x_size: Size of field in the x direction</li>
-<li>y_size: Size of field in the y direction</li>
-</ul>
-<p>Optional inputs
-- data: directory giving hard data constraints (must be in Geo-EAS format).
-Default value does not exist
-- var: variance value. (Sill)
-Default value gives variance = 1
-- mean: Stationary mean.
-Default values gives 0
-- var_type: Which variogram type should be selected. 1:Spherical, 2:exponential, 3:Gaussian
-Default values gives a spherical variogram model
-- outfile: Directory of the outfile where the field is written.
-Default value if 'foo.out'.
-- corr_range: Correlation range,
-Default value = 1
-- corr_aniso: Correlation anisotropy coefficient [0 1]
-Default value = 1 (isotropic)
-- corr_angl: Correlation angle (from y-axis)
-Default value = 0 (correlation along the y-axis)
-- limits: min and max truncation limits
-Default values, min: -1.0e21, max: 1.0e21
-- number: number of ensemble members
-Default value = 1
-KF 06/11-2015</p>
-<hr>
-<p>Note: The sgsim is capable of simulating 3-d fields, however, we have only given paramters for simulation of
-a 2-D field. Upgrading this</p></div>
-<h3>Methods</h3>
+<div class="desc"></div>
+<h3>Class variables</h3>
 <dl>
-<dt id="pipt.geostat.gslib.Sgsim.gen_real"><code class="name flex">
-<span>def <span class="ident">gen_real</span></span>(<span>self, simpath='/home/runner/work/PET/PET/')</span>
-</code></dt>
+<dt id="misc.ecl_common.Phase.oil"><code class="name">var <span class="ident">oil</span></code></dt>
 <dd>
-<div class="desc"><p>Function for running the GSLIB package sGsim. It is assumed that we already have run init_sgsim such that the
-input file is generated. It is further assumed that GSLIB is installed an in the system path. For more
-information regarding GSLIB, source code and executables see: <a href="http://www.gslib.com/">http://www.gslib.com/</a></p></div>
+<div class="desc"></div>
+</dd>
+<dt id="misc.ecl_common.Phase.wat"><code class="name">var <span class="ident">wat</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="misc.ecl_common.Phase.gas"><code class="name">var <span class="ident">gas</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
-<dt id="pipt.geostat.gslib.Sisim"><code class="flex name class">
-<span>class <span class="ident">Sisim</span></span>
-<span>(</span><span>x_size, y_size, cat, thresh, var_type, var, cdf, data='foo.dat', cat_type=0, M_B=0, limits=[0, 1], outfile='sisim.out', number=1, corr_range=[1], corr_aniso=[1], corr_angl=[0], mean=None, facies_var=None)</span>
+<dt id="misc.ecl_common.Prop"><code class="flex name class">
+<span>class <span class="ident">Prop</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>This script writes the input file for gslib's sequential indicator simulation program.</p>
-<h2 id="input">Input</h2>
-<ul>
-<li>x_size: Size of field in x-direction</li>
-<li>y_size: Size of field in y-direction</li>
-<li>cat:
-Number of categories</li>
-<li>thresh: Threshold values (must be cat values and iterable)</li>
-<li>cdf:
-Global CDF or PDF values (must be cat values and iterable)</li>
-<li>var_type: list of variogramtyps, as long as cat</li>
-<li>var: Variance for the different categories, as long as cat
-Optional input:
-- Data:
-File with data (if it does not exists =&gt; unconditional)
-- cat_type: variable typw (1=continous, 0=categorical)
-- M_B:
-Markov-Bayes type simulation. 0=no, 1=yes
-- limits: trimming limits
-- outfile: string containing name of the file where data are stored
-- number: number of simulations
-- corr_range: correlation range in maximum horizontal direction
-- corr_aniso: Anisotropi factor.
-- corr_angl: Angle of primary correlation. Defined clockwise around the y-axis.</li>
-</ul></div>
-<h3>Methods</h3>
+<div class="desc"></div>
+<h3>Class variables</h3>
 <dl>
-<dt id="pipt.geostat.gslib.Sisim.gen_real"><code class="name flex">
-<span>def <span class="ident">gen_real</span></span>(<span>self)</span>
-</code></dt>
+<dt id="misc.ecl_common.Prop.pres"><code class="name">var <span class="ident">pres</span></code></dt>
 <dd>
-<div class="desc"><p>Function for running the GSLIB package sIsim. It is assumed that we already have run init_sisim such that
-the input file is generated. It is further assumed that GSLIB is installed an in the system path. For more
-information regarding GSLIB, source code and executables see: <a href="http://www.gslib.com/">http://www.gslib.com/</a></p></div>
+<div class="desc"></div>
+</dd>
+<dt id="misc.ecl_common.Prop.sat"><code class="name">var <span class="ident">sat</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="misc.ecl_common.Prop.mole"><code class="name">var <span class="ident">mole</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="misc.ecl_common.Prop.dens"><code class="name">var <span class="ident">dens</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="misc.ecl_common.Prop.temp"><code class="name">var <span class="ident">temp</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="misc.ecl_common.Prop.leak"><code class="name">var <span class="ident">leak</span></code></dt>
+<dd>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -135,21 +102,28 @@ information regarding GSLIB, source code and executables see: <a href="http://ww
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="pipt.geostat" href="index.html">pipt.geostat</a></code></li>
+<li><code><a title="misc" href="index.html">misc</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="pipt.geostat.gslib.Sgsim" href="#pipt.geostat.gslib.Sgsim">Sgsim</a></code></h4>
+<h4><code><a title="misc.ecl_common.Phase" href="#misc.ecl_common.Phase">Phase</a></code></h4>
 <ul class="">
-<li><code><a title="pipt.geostat.gslib.Sgsim.gen_real" href="#pipt.geostat.gslib.Sgsim.gen_real">gen_real</a></code></li>
+<li><code><a title="misc.ecl_common.Phase.oil" href="#misc.ecl_common.Phase.oil">oil</a></code></li>
+<li><code><a title="misc.ecl_common.Phase.wat" href="#misc.ecl_common.Phase.wat">wat</a></code></li>
+<li><code><a title="misc.ecl_common.Phase.gas" href="#misc.ecl_common.Phase.gas">gas</a></code></li>
 </ul>
 </li>
 <li>
-<h4><code><a title="pipt.geostat.gslib.Sisim" href="#pipt.geostat.gslib.Sisim">Sisim</a></code></h4>
-<ul class="">
-<li><code><a title="pipt.geostat.gslib.Sisim.gen_real" href="#pipt.geostat.gslib.Sisim.gen_real">gen_real</a></code></li>
+<h4><code><a title="misc.ecl_common.Prop" href="#misc.ecl_common.Prop">Prop</a></code></h4>
+<ul class="two-column">
+<li><code><a title="misc.ecl_common.Prop.pres" href="#misc.ecl_common.Prop.pres">pres</a></code></li>
+<li><code><a title="misc.ecl_common.Prop.sat" href="#misc.ecl_common.Prop.sat">sat</a></code></li>
+<li><code><a title="misc.ecl_common.Prop.mole" href="#misc.ecl_common.Prop.mole">mole</a></code></li>
+<li><code><a title="misc.ecl_common.Prop.dens" href="#misc.ecl_common.Prop.dens">dens</a></code></li>
+<li><code><a title="misc.ecl_common.Prop.temp" href="#misc.ecl_common.Prop.temp">temp</a></code></li>
+<li><code><a title="misc.ecl_common.Prop.leak" href="#misc.ecl_common.Prop.leak">leak</a></code></li>
 </ul>
 </li>
 </ul>
