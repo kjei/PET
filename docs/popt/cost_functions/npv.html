@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>popt.update_schemes.enopt API documentation</title>
+<title>popt.cost_functions.npv API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -21,7 +21,7 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>popt.update_schemes.enopt</code></h1>
+<h1 class="title">Module <code>popt.cost_functions.npv</code></h1>
 </header>
 <section id="section-intro">
 </section>
@@ -30,91 +30,23 @@
 <section>
 </section>
 <section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="popt.cost_functions.npv.npv"><code class="name flex">
+<span>def <span class="ident">npv</span></span>(<span>pred_data, keys_opt, report)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Net present value cost function</p>
+<h2 id="input">Input</h2>
+<ul>
+<li>pred_data_en : ensemble of predicted data</li>
+<li>keys_opt : keys with economic data</li>
+<li>report : report dates</li>
+</ul></div>
+</dd>
+</dl>
 </section>
 <section>
-<h2 class="section-title" id="header-classes">Classes</h2>
-<dl>
-<dt id="popt.update_schemes.enopt.EnOpt"><code class="flex name class">
-<span>class <span class="ident">EnOpt</span></span>
-<span>(</span><span>keys_opt, keys_en, sim, obj_func)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>This is an implementation of the steepest ascent ensemble optimization algorithm given in, e.g., Chen et al.,
-2009, 'Efficient Ensemble-Based Closed-Loop Production Optimization', SPE Journal, 14 (4): 634-645.
-The update of the control variable is done with the simple steepest (or gradient) ascent algorithm:</p>
-<pre><code>x_l = (1 / alpha) * R * S + x_(l-1)
-</code></pre>
-<p>where x is the control variable, l and l-1 is the current and previous iteration, alpha is a step limiter,
-R is a smoothing matrix (e.g., covariance matrix for x), and S is the ensemble gradient (or sensitivity).</p>
-<p>Class extends the ReadInitFile class. First the PIPT init. file is passed to the parent class for reading and
-parsing. Rest of the initialization uses the keywords parsed in ReadInitFile (parent) class to set up observed,
-predicted data and data variance dictionaries. Also, the simulator to be used in forecast and/or predictions is
-initialized with keywords parsed in ReadInitFile (parent) class. Lastly, the initial ensemble is generated (if
-it has not been inputted), and some saving of variables can be done chosen in PIPT init. file.</p>
-<h2 id="parameter">Parameter</h2>
-<p>init_file : str
-path to input file containing initiallization values</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="ensemble.ensemble.Ensemble" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble">Ensemble</a></li>
-</ul>
-<h3>Static methods</h3>
-<dl>
-<dt id="popt.update_schemes.enopt.EnOpt.get_sym_pos_semidef"><code class="name flex">
-<span>def <span class="ident">get_sym_pos_semidef</span></span>(<span>a)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-<h3>Methods</h3>
-<dl>
-<dt id="popt.update_schemes.enopt.EnOpt.calc_update"><code class="name flex">
-<span>def <span class="ident">calc_update</span></span>(<span>self, iteration, logger=None)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Update using steepest ascent method with ensemble gradients</p></div>
-</dd>
-<dt id="popt.update_schemes.enopt.EnOpt.calc_ensemble_sensitivity"><code class="name flex">
-<span>def <span class="ident">calc_ensemble_sensitivity</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Calculate the sensitivity matrix normally associated with ensemble optimization algorithms, usually defined as:</p>
-<pre><code>S ~= C_x * G.T
-</code></pre>
-<p>where '~=' means 'approximately equal', C_x is the state covariance matrix, and G is the standard
-sensitivity matrix. The ensemble sensitivity matrix is calculated as:</p>
-<pre><code>S = (1/ (ne - 1)) * U * J.T
-</code></pre>
-<p>where U and J are ensemble matrices of state (or control variables) and objective function perturbed by their
-respective means. In practice (and in this method), S is calculated by perturbing the current state (control
-variable) with Gaussian random numbers from N(0, C_x) (giving U), running the generated state ensemble (U)
-through the simulator to give an ensemble of objective function values (J), and in the end calculate S. Note
-that S is an Ns x 1 vector, where Ns is length of the state vector (the objective function is just a scalar!)</p>
-<p>ST 3/5-18: First implementation. Much of the code here is taken directly from fwd_sim.ensemble Ensemble class.
-YC 2/10-19: Added calcuating gradient of covariance.</p></div>
-</dd>
-<dt id="popt.update_schemes.enopt.EnOpt.save_analysis_debug"><code class="name flex">
-<span>def <span class="ident">save_analysis_debug</span></span>(<span>self, iteration)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
-<h3>Inherited members</h3>
-<ul class="hlist">
-<li><code><b><a title="ensemble.ensemble.Ensemble" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble">Ensemble</a></b></code>:
-<ul class="hlist">
-<li><code><a title="ensemble.ensemble.Ensemble.calc_prediction" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.calc_prediction">calc_prediction</a></code></li>
-<li><code><a title="ensemble.ensemble.Ensemble.gen_init_ensemble" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.gen_init_ensemble">gen_init_ensemble</a></code></li>
-<li><code><a title="ensemble.ensemble.Ensemble.get_list_assim_steps" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.get_list_assim_steps">get_list_assim_steps</a></code></li>
-<li><code><a title="ensemble.ensemble.Ensemble.load" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.load">load</a></code></li>
-<li><code><a title="ensemble.ensemble.Ensemble.save" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.save">save</a></code></li>
-</ul>
-</li>
-</ul>
-</dd>
-</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -125,20 +57,12 @@ YC 2/10-19: Added calcuating gradient of covariance.</p></div>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="popt.update_schemes" href="index.html">popt.update_schemes</a></code></li>
+<li><code><a title="popt.cost_functions" href="index.html">popt.cost_functions</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-classes">Classes</a></h3>
-<ul>
-<li>
-<h4><code><a title="popt.update_schemes.enopt.EnOpt" href="#popt.update_schemes.enopt.EnOpt">EnOpt</a></code></h4>
+<li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="popt.update_schemes.enopt.EnOpt.get_sym_pos_semidef" href="#popt.update_schemes.enopt.EnOpt.get_sym_pos_semidef">get_sym_pos_semidef</a></code></li>
-<li><code><a title="popt.update_schemes.enopt.EnOpt.calc_update" href="#popt.update_schemes.enopt.EnOpt.calc_update">calc_update</a></code></li>
-<li><code><a title="popt.update_schemes.enopt.EnOpt.calc_ensemble_sensitivity" href="#popt.update_schemes.enopt.EnOpt.calc_ensemble_sensitivity">calc_ensemble_sensitivity</a></code></li>
-<li><code><a title="popt.update_schemes.enopt.EnOpt.save_analysis_debug" href="#popt.update_schemes.enopt.EnOpt.save_analysis_debug">save_analysis_debug</a></code></li>
-</ul>
-</li>
+<li><code><a title="popt.cost_functions.npv.npv" href="#popt.cost_functions.npv.npv">npv</a></code></li>
 </ul>
 </li>
 </ul>

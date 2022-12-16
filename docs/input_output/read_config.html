@@ -77,7 +77,9 @@
 <span>def <span class="ident">read_txt</span></span>(<span>init_file)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Read a PIPT input file (.pipt), parse and output dictionaries for data assimilation and simulator classes.</p>
+<div class="desc"><p>Read a PIPT or POPT input file (.pipt or .popt), parse and output dictionaries for data assimilation or
+optimization,
+and simulator classes.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
@@ -85,8 +87,8 @@
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>keys_da</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Parsed keywords from DATAASSIM</dd>
+<dt><strong><code>keys_pr</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Parsed keywords from DATAASSIM or OPTIM</dd>
 <dt><strong><code>keys_fwd</code></strong> :&ensp;<code>dict</code></dt>
 <dd>Parsed keywords from FWDSSIM</dd>
 </dl></div>
@@ -128,7 +130,7 @@
 </code></dt>
 <dd>
 <div class="desc"><p>Here we parse the lines in the init. file to a Python dictionary. The keys of the dictionary is the keywords
-entered in the PIPT init. file, and the information entered in each keyword is stored in each key of the
+in the PIPT init. file, and the information in each keyword is stored in each key of the
 dictionary. To know how the keyword-information is organized in the keys of the dictionary, confront the
 manual located in the doc folder.</p>
 <h2 id="parameters">Parameters</h2>
@@ -142,11 +144,23 @@ manual located in the doc folder.</p>
 <dd>Dictionary with all info. from the init. file.</dd>
 </dl></div>
 </dd>
-<dt id="input_output.read_config.check_mand_keywords_da_fwdsim"><code class="name flex">
-<span>def <span class="ident">check_mand_keywords_da_fwdsim</span></span>(<span>keys_da, keys_fwd)</span>
+<dt id="input_output.read_config.check_mand_keywords_fwd"><code class="name flex">
+<span>def <span class="ident">check_mand_keywords_fwd</span></span>(<span>keys_fwd)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Check for mandatory keywords in <code>DATAASSIM</code> and <code>FWDSIM</code> part, and output error if they are not present</p></div>
+<div class="desc"><p>Check for mandatory keywords in <code>FWDSIM</code> part, and output error if they are not present</p></div>
+</dd>
+<dt id="input_output.read_config.check_mand_keywords_da"><code class="name flex">
+<span>def <span class="ident">check_mand_keywords_da</span></span>(<span>keys_da)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check for mandatory keywords in <code>DATAASSIM</code> part, and output error if they are not present</p></div>
+</dd>
+<dt id="input_output.read_config.check_mand_keywords_opt"><code class="name flex">
+<span>def <span class="ident">check_mand_keywords_opt</span></span>(<span>keys_opt)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check for mandatory keywords in <code>OPTIM</code> part, and output error if they are not present</p></div>
 </dd>
 </dl>
 </section>
@@ -174,7 +188,9 @@ manual located in the doc folder.</p>
 <li><code><a title="input_output.read_config.read_clean_file" href="#input_output.read_config.read_clean_file">read_clean_file</a></code></li>
 <li><code><a title="input_output.read_config.remove_empty_lines" href="#input_output.read_config.remove_empty_lines">remove_empty_lines</a></code></li>
 <li><code><a title="input_output.read_config.parse_keywords" href="#input_output.read_config.parse_keywords">parse_keywords</a></code></li>
-<li><code><a title="input_output.read_config.check_mand_keywords_da_fwdsim" href="#input_output.read_config.check_mand_keywords_da_fwdsim">check_mand_keywords_da_fwdsim</a></code></li>
+<li><code><a title="input_output.read_config.check_mand_keywords_fwd" href="#input_output.read_config.check_mand_keywords_fwd">check_mand_keywords_fwd</a></code></li>
+<li><code><a title="input_output.read_config.check_mand_keywords_da" href="#input_output.read_config.check_mand_keywords_da">check_mand_keywords_da</a></code></li>
+<li><code><a title="input_output.read_config.check_mand_keywords_opt" href="#input_output.read_config.check_mand_keywords_opt">check_mand_keywords_opt</a></code></li>
 </ul>
 </li>
 </ul>
