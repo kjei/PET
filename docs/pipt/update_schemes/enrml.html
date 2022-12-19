@@ -255,6 +255,7 @@ update_methods. This class must therefore facititate many different update schem
 <ul class="hlist">
 <li><a title="pipt.update_schemes.enrml.gnenrml_approx" href="#pipt.update_schemes.enrml.gnenrml_approx">gnenrml_approx</a></li>
 <li><a title="pipt.update_schemes.enrml.gnenrml_full" href="#pipt.update_schemes.enrml.gnenrml_full">gnenrml_full</a></li>
+<li><a title="pipt.update_schemes.enrml.gnenrml_margis" href="#pipt.update_schemes.enrml.gnenrml_margis">gnenrml_margis</a></li>
 <li><a title="pipt.update_schemes.enrml.gnenrml_subspace" href="#pipt.update_schemes.enrml.gnenrml_subspace">gnenrml_subspace</a></li>
 </ul>
 <h3>Methods</h3>
@@ -405,6 +406,48 @@ update_methods. This class must therefore facititate many different update schem
 <li><a title="pipt.loop.ensemble.Ensemble" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble">Ensemble</a></li>
 <li><a title="ensemble.ensemble.Ensemble" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble">Ensemble</a></li>
 <li><a title="pipt.update_schemes.update_methods.subspace_update" href="update_methods.html#pipt.update_schemes.update_methods.subspace_update">subspace_update</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="pipt.update_schemes.enrml.gnenrmlMixIn" href="#pipt.update_schemes.enrml.gnenrmlMixIn">gnenrmlMixIn</a></b></code>:
+<ul class="hlist">
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.calc_analysis" href="#pipt.update_schemes.enrml.gnenrmlMixIn.calc_analysis">calc_analysis</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.calc_prediction" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.calc_prediction">calc_prediction</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.check_assimindex_sequential" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_sequential">check_assimindex_sequential</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.check_assimindex_simultaneous" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.check_assimindex_simultaneous">check_assimindex_simultaneous</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.check_convergence" href="#pipt.update_schemes.enrml.gnenrmlMixIn.check_convergence">check_convergence</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.gen_init_ensemble" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.gen_init_ensemble">gen_init_ensemble</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.get_list_assim_steps" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.get_list_assim_steps">get_list_assim_steps</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.load" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.load">load</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.save" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble.save">save</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.save_temp_state_assim" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_assim">save_temp_state_assim</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.save_temp_state_iter" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_iter">save_temp_state_iter</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.save_temp_state_mda" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_mda">save_temp_state_mda</a></code></li>
+<li><code><a title="pipt.update_schemes.enrml.gnenrmlMixIn.save_temp_state_ml" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble.save_temp_state_ml">save_temp_state_ml</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="pipt.update_schemes.enrml.gnenrml_margis"><code class="flex name class">
+<span>class <span class="ident">gnenrml_margis</span></span>
+<span>(</span><span>keys_da, keys_fwd, sim)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The marg-IS scheme is currently not available in this version of PIPT. To utilize the scheme you have to import the
+<em>margIS_update</em> class from a standalone repository.</p>
+<p>The class is initialized by passing the PIPT init. file upwards in the hierarchy to be read and parsed in
+<code>pipt.input_output.pipt_init.ReadInitFile</code>.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>init_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>PIPT init. file containing info. to run the inversion algorithm</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="pipt.update_schemes.enrml.gnenrmlMixIn" href="#pipt.update_schemes.enrml.gnenrmlMixIn">gnenrmlMixIn</a></li>
+<li><a title="pipt.loop.ensemble.Ensemble" href="../loop/ensemble.html#pipt.loop.ensemble.Ensemble">Ensemble</a></li>
+<li><a title="ensemble.ensemble.Ensemble" href="../../ensemble/ensemble.html#ensemble.ensemble.Ensemble">Ensemble</a></li>
+<li><a title="pipt.update_schemes.update_methods.margIS_update" href="update_methods.html#pipt.update_schemes.update_methods.margIS_update">margIS_update</a></li>
 </ul>
 <h3>Inherited members</h3>
 <ul class="hlist">
@@ -629,6 +672,9 @@ KF 10/3-21: Output whether the method reduced the objective function</p></div>
 </li>
 <li>
 <h4><code><a title="pipt.update_schemes.enrml.gnenrml_subspace" href="#pipt.update_schemes.enrml.gnenrml_subspace">gnenrml_subspace</a></code></h4>
+</li>
+<li>
+<h4><code><a title="pipt.update_schemes.enrml.gnenrml_margis" href="#pipt.update_schemes.enrml.gnenrml_margis">gnenrml_margis</a></code></h4>
 </li>
 <li>
 <h4><code><a title="pipt.update_schemes.enrml.co_lm_enrml" href="#pipt.update_schemes.enrml.co_lm_enrml">co_lm_enrml</a></code></h4>
